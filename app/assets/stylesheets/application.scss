@@ -18,6 +18,17 @@ header.main {
   }
 }
 
+.notice, #notice {
+  background: #ffb;
+  border-radius: 0.5em;
+  border: solid 0.177em #882;
+  color: #882;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 1em 1.414em;
+  text-align: center;
+}
+
 .content {
   margin: 0;
   padding: 0;
@@ -160,35 +171,52 @@ header.main {
   .products tfoot td {
     padding: 0.5em 0;
   }
-  
+
   .store {
     max-width: 80em;
-  }
-  .store ul.catalog {
-    border-top: solid 0.25em;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .store li {
-    padding: 1em;
-    margin: 0;
-    border-bottom: solid thin #ddd;
-  }
-  .store li::after {
-    clear: both;
-    content: "";
-    display: blocl;
-  }
-  .store li img {
-    float: left;
-    padding: 1em;
-    margin-right: 1em;
-    margin-bottom: 1em;
-    box-shadow: 0.176em 0.176em 0.354em 0px rgba(0, 0, 0, 0.75);
-  }
-  .store li .price {
-    font-size: 1.414em;
-  }
-  /*# sourceMappingURL=products.css.map */
+    ul.catalog {
+      border-top: solid 0.250em;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        padding: 1em;
+        margin: 0;
+        border-bottom: solid thin #ddd;
   
+        // This makes sure our <li> has enough height
+        // to hold the entire image, since it's floated
+        &::after {
+          clear: both;
+          content: " ";
+          display: block;
+        }
+        img {
+          float: left;
+          padding: 1em;
+          margin-right: 1em;
+          margin-bottom: 1em;
+          box-shadow: 0.176em 0.176em 0.354em 0px rgba(0,0,0,0.75);
+        }
+  //
+        .price {
+          font-size: 1.414em;
+        }
+        form, div {
+          display: inline;
+        }
+        input[type="submit"] {
+          background-color: #282;
+          border-radius: 0.354em;
+          border: solid thin #141;
+          color: white;
+          font-size: 1em;
+          padding: 0.354em 1em;
+        }
+        input[type="submit"]:hover {
+          background-color: #141;
+        }
+      }
+  //
+    }
+  }
